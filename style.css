@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* मोबाईल स्क्रीनसाठी बदल (Responsive Design) */
+@media (max-width: 768px) {
+    /* टॉप बारमधील माहिती एकाखाली एक दिसेल */
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* नेव्हिगेशन मेनू मोबाईलसाठी */
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+
+    /* हिरो सेक्शनमधील टेक्स्ट साईज लहान करणे */
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* सर्व्हिसेस एकाखाली एक दिसतील */
+    .service-container {
+        flex-direction: column;
+    }
+
+    .service-box {
+        margin-bottom: 20px;
+    }
+
+    /* कॉन्टॅक्ट फॉर्मची रुंदी वाढवणे */
+    #contact-form {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+/* Top Bar */
+.top-bar {
+    background: #222;
+    color: white;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    text-decoration-line: none;
+    
+}
+.top-bar a{
+    color: white;
+    text-decoration: none;
+}
+.social-links a {
+    color: white;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-links a:hover { 
+    color: #00d2ff; 
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { 
+    font-size: 24px; 
+    font-weight: bold;
+    color: #333; 
+}
+.logo span {
+     color: #00d2ff; 
+    }
+
+nav ul { 
+    list-style: none; 
+    display: flex; 
+}
+nav ul li { 
+    margin-left: 20px; 
+}
+nav ul li a {
+     text-decoration: none; 
+     color: #333; 
+     font-weight: 500; 
+    }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 { 
+    font-size: 50px; 
+    margin-bottom: 10px; 
+}
+.hero p { 
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+
+.btn {
+    padding: 12px 30px;
+    background: #00d2ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover { 
+    background: #3a7bd5; 
+}
+
+/* Services */
+.services { 
+    padding: 80px 10%; 
+    text-align: center; 
+}
+.service-container {
+    display: flex; 
+    gap: 20px; 
+    margin-top: 40px; }
+.service-box {
+    background: white;
+    padding: 30px;
+    flex: 1;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.service-box:hover {
+     transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0, 210, 255, 0.4);
+     }
+.service-box i { 
+    font-size: 40px;
+     color: #00d2ff;
+      margin-bottom: 15px;
+     }
+/* ABOUT */
+.about{
+    padding: 80px 10%;
+    background: #f8f9fa;
+}
+
+.about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-image img{
+    width: 380px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+.about-image img:hover{
+    transform: scale(1.03);
+}
+
+.about-content{
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content h2{
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.about-content p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.about-content .motto{
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ffff;
+}
+/* Contact Form */
+.contact{
+    padding: 80px 10%;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.contact h2{
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.contact form{
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact form input,
+.contact form textarea{
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+    background: white;
+}
+
+.contact form input:focus,
+.contact form textarea:focus{
+    border-color: hsl(186, 100%, 50%);
+    box-shadow: 0 0 10px rgba(19, 92, 219, 0.3);
+}
+
+.contact form textarea{
+    height: 150px;
+    resize: none;
+}
+
+.contact form .btn{
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: hsl(182, 100%, 50%);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact form .btn:hover{
+    background: #0d1fe4;
+    transform: scale(1.03);
+}
+
+.whatsapp-float{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+    background: #1ebe5d;
+}
+
+footer { background: #222; 
+    color: white;
+     text-align: center; 
+     padding: 20px; 
+    }
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablets */
+@media (max-width: 992px){
+
+    .top-bar{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 5%;
+    }
+
+    header{
+        padding: 15px 5%;
+    }
+
+    .hero h1{
+        font-size: 42px;
+    }
+
+    .hero p{
+        font-size: 18px;
+    }
+
+    .about-container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img{
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .service-container{
+        flex-wrap: wrap;
+    }
+
+    .service-box{
+        min-width: 250px;
+    }
+}
+
+
+/* Mobile Devices */
+@media (max-width: 768px){
+
+    header{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav ul li{
+        margin-left: 0;
+    }
+
+    .hero{
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero h1{
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+    .btn{
+        padding: 10px 25px;
+    }
+
+    .services,
+    .about,
+    .contact{
+        padding: 60px 5%;
+    }
+
+    .service-container{
+        flex-direction: column;
+    }
+
+    .about-content h2,
+    .contact h2{
+        font-size: 30px;
+    }
+
+    .about-content p{
+        font-size: 15px;
+    }
+
+    .contact form{
+        width: 100%;
+    }
+
+    .whatsapp-float{
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+
+/* Small Mobile Devices */
+@media (max-width: 480px){
+
+    .logo{
+        font-size: 22px;
+    }
+
+    .hero h1{
+        font-size: 26px;
+    }
+
+    .hero p{
+        font-size: 14px;
+    }
+
+    .top-bar{
+        font-size: 12px;
+    }
+
+    .social-links a{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .about-content .motto{
+        font-size: 18px;
+    }
+
+    footer{
+        font-size: 14px;
+    }
+}
